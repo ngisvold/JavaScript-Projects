@@ -9,7 +9,17 @@ var colors = [
 
 var squares = document.querySelectorAll(".square");
 var pickedColor = colors[3];
+var colorDisplay = document.getElementById("colorDisplay");
+
+colorDisplay.textContent = pickedColor;
 
 for(var i =0; i < squares.length; i++){
+	//add initial colors to squares
 	squares[i].style.background = colors[i];
+
+	//add click listener to each square
+	squares[i].addEventListener("click", function(){
+		alert("clicked a square");
+
+	});
 }

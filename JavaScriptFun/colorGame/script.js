@@ -8,7 +8,7 @@ var colors = [
 ]
 
 var squares = document.querySelectorAll(".square");
-var pickedColor = colors[3];
+var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var msgDisplay = document.querySelector("#msg")
 
@@ -33,6 +33,7 @@ for(var i =0; i < squares.length; i++){
 		}
 
 	});
+}
 
 	function chgColors(colors){
 		//loop through squares
@@ -41,4 +42,8 @@ for(var i =0; i < squares.length; i++){
 			squares[i].style.background = colors;
 		}
 	}
+
+function pickColor(){
+	var random = Math.floor(Math.random() * colors.length);
+	return colors[random];
 }

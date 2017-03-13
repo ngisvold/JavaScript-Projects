@@ -25,6 +25,7 @@ for(var i =0; i < squares.length; i++){
 		//compare to pickedColor
 		if(clickedColor=== pickedColor){
 			msgDisplay.textContent = "Correct!";
+			chgColors(clickedColor);
 		} else {
 			//Wrong colors go to background
 			this.style.background = '#232323';
@@ -32,4 +33,12 @@ for(var i =0; i < squares.length; i++){
 		}
 
 	});
+
+	function chgColors(colors){
+		//loop through squares
+		for(var i =0; i < squares.length; i++){
+			//Chnage each color to match given color
+			squares[i].style.background = colors;
+		}
+	}
 }

@@ -18,7 +18,7 @@ body {
 
 #container{
 	max-width: 600px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 #stripe{
@@ -65,6 +65,7 @@ button{
 	transition: all .3s;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
+	outline:none;
 }
 
 button:hover {

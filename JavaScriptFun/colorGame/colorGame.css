@@ -1,5 +1,7 @@
 body {
 	background-color: #232323;
+	margin: 0;
+	font-family: "Montserrat","Avenir";
 }
 
 .square{
@@ -22,10 +24,32 @@ body {
 	color: black;
 }
 
+#colorDisplay{
+	font-size: 200%;
+}
+
 h1{
+	text-align: center;
+	line-height: 1.1;
+	font-weight: normal;
 	color: white;
+	background: steelblue;
+	margin: 0;
+	text-transform: uppercase;
+	padding:20px 0;
 }
 
 .selected {
 	background: blue;
+}
+
+button{
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit;
 }

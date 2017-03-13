@@ -6,6 +6,36 @@ var colorDisplay = document.getElementById("colorDisplay");
 var msgDisplay = document.querySelector("#msg")
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easyBtn");
+var hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", function(){
+	easyBtn.classList.add("selected");
+	hardBtn.classList.remove("selected");
+	colors = generateRandomColors(3);
+	pickedColor = pickColor();
+	colorDisplay.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++) {
+		if(colors[i]){
+			squares[i].style.background = colors[i];
+		} else {
+			squares[i].style.display = "none";
+		}
+	}
+});
+
+hardBtn.addEventListener("click", function(){
+	easyBtn.classList.remove("selected");
+	hardBtn.classList.add("selected");
+	colors = generateRandomColors(6);
+	pickedColor = pickColor();
+	colorDisplay.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++) {
+		squares[i].style.background = colors[i];
+		squares[i].style.display = "block";
+	}
+
+});
 
 resetButton.addEventListener("click", function(){
 	//generate new colors
@@ -19,7 +49,8 @@ resetButton.addEventListener("click", function(){
 			//Chnage each color to match given color
 			squares[i].style.background = colors[i];
 		}
-})
+		h1.style.background = '#232323';
+});
 
 colorDisplay.textContent = pickedColor;
 
@@ -34,6 +65,7 @@ for(var i =0; i < squares.length; i++){
 		//compare to pickedColor
 		if(clickedColor=== pickedColor){
 			msgDisplay.textContent = "Correct!";
+			resetButton.textContent = "Play Again?";
 			chgColors(clickedColor);
 			h1.style.background = clickedColor;
 		} else {
